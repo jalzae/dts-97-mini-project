@@ -1,9 +1,10 @@
-import React from 'react'
+import axios from 'axios';
 
-function axios() {
-    return (
-        <div>axios</div>
-    )
-}
+const instance = axios.create({
+    baseURL: "https://api.themoviedb.org/3"
+});
 
-export default axios
+instance.get('/foo-bar');
+
+
+export default instance;
