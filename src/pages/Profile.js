@@ -4,6 +4,7 @@ import '../assets/css/style.css'
 import Picture from '../components/profile/picture'
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import icon from '../assets/img/icon.png'
+//TODO login with profile
 function Profile() {
   return (
     <div className="Profile">

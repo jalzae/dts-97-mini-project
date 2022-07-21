@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export default axios.create({
- baseURL: 'http://localhost/jobscoop/api/'
-})
+    baseURL: "https://api.themoviedb.org/3"
+});

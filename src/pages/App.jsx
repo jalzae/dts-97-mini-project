@@ -3,7 +3,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
 import '../assets/css/app.scoped.css'
 import image from "../assets/img/background.png";
+import Login from '../components/index/login'
+import Register from '../components/index/register'
+import { useState } from 'react'
 function App() {
+
+  const [isLogin, setLogin] = useState(true)
+  const changeMode = () => {
+    setLogin(!isLogin)
+  }
+
   return (
     <div className="App row" style={{ overflow: "hidden" }}>
       <div className='col-lg-4 left-main'>
@@ -13,19 +22,9 @@ function App() {
 
       </div>
       <div className='col-lg-6 col-sm-12 right-main'>
-        <form className='m-5 p-5'>
-          <div className='form-group'>
-            <input type="text" className='form-control rounded-0 bg-dark text-light' placeholder='EMAIL' />
-          </div>
-
-          <div className='form-group'>
-            <input type="text" className='form-control rounded-0 bg-dark text-light' placeholder='PASSWORD' />
-          </div>
-          <div className='form-group'>
-            <button className='btn btn-danger form-control rounded-0'>LOGIN</button>
-          </div>
-        </form>
-
+        {
+          isLogin ? <Login changeMode={() => changeMode()}></Login> : <Register changeMode={() => changeMode()}></Register>
+        }
       </div>
     </div>
   );
