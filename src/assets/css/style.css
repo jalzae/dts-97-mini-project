@@ -217,6 +217,18 @@ h3 {
 .swiper-button-next {
   color: white !important;
 }
+.preview-item {
+  cursor: pointer;
+}
+.preview-slide {
+  cursor: pointer;
+}
+.search-text input {
+  max-height: 50px !important;
+}
+.search {
+  cursor: pointer;
+}
 
 @media only screen and (max-width:900px) {
   .left-main {
