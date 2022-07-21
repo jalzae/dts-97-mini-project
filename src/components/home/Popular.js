@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+
 import movies from '../../data/movies.js'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
