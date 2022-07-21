@@ -17,7 +17,7 @@ function Header() {
           </div>
           <ul className='nav-item d-flex float-end'>
             {
-              menu.map((x) => <li className={selected === x.name ? 'active' : null} onClick={() => setMenu(x.name)}><a>{x.name}</a></li>)
+              menu.map((x) => <li className={selected === x.name ? 'active' : null} onClick={() => setMenu(x.name)}>{x.name}</li>)
             }
           </ul>
         </nav>
@@ -33,7 +33,7 @@ function Header() {
                 <img style={{ maxWidth: "30px", }} src={image} alt="its just logo" />
               </button>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Logout</a>
+                Logout
               </div>
 
             </li>

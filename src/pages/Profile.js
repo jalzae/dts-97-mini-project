@@ -7,7 +7,7 @@ import icon from '../assets/img/icon.png'
 function Profile() {
   return (
     <div className="Profile">
-      <img className='iconApps' src={icon} lat="icon image"></img>
+      <img className='iconApps' src={icon} alt="icon profile"></img>
 
       <div className='ProfileBody'>
         <div className='col-lg-12 text-light d-flex justify-content-center'>
