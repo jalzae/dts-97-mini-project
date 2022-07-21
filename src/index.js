@@ -4,6 +4,7 @@ import './index.css';
 import App from './pages/App';
 import Profile from './pages/Profile';
 import Home from './pages/Home';
+import Detail from './pages/Detail';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from 'react-redux'
 import { store } from "./store/index";
@@ -18,6 +19,7 @@ root.render(
           <Route path="/" element={<App />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/detail/:id" element={<Detail />} />
         </Routes>
       </BrowserRouter>
     </Provider>

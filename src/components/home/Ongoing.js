@@ -18,9 +18,9 @@ const OnGoing = () => {
           slidesPerView={4}
           navigation={true}
           loop={true}
-          onSlideChange={() => console.log('slide change')}
-          onSwiper={(swiper) => console.log(swiper)}
-          onReachEnd={() => console.log("react end")}
+          onSlideChange={() => {}}
+          onSwiper={(swiper) =>{}}
+          onReachEnd={() => {}}
         >
           {
             movies.results.map((x) => <SwiperSlide><div className='preview-item col-lg-11 rounded-3 m-1'>

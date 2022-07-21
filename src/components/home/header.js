@@ -1,6 +1,6 @@
 
 import menu from '../../data/menu.js'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import icon from '../../assets/img/icon.png'
 import SearchIcon from '@mui/icons-material/Search';
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
@@ -9,6 +9,7 @@ import image from "../../assets/img/users/ProfilePicture.png";
 import { keluarDariApps } from '../../auth/firebase'
 import { useNavigate } from "react-router-dom";
 function Header(location) {
+  let username
   let navigate = useNavigate()
   const [selected, setMenu] = useState('Home');
   const [searchMode, setMode] = useState(false);
@@ -24,6 +25,14 @@ function Header(location) {
     await keluarDariApps()
     navigate("/", { replace: true });
   }
+
+  useEffect(() => {
+    if (location != null || location != undefined) {
+      username = location.location.state.name
+    } else {
+      username = ''
+    }
+  })
 
   return (
     <div className="headerClass">
@@ -45,7 +54,7 @@ function Header(location) {
                 searchMode == true ? <input type="text" className="rounded-3" placeholder='Search film..' onKeyDown={(e) => Searchfilm(e, e.target.value)} /> : ''
               }</li>
             <li className='search' onClick={() => setMode(!searchMode)}><SearchIcon></SearchIcon></li>
-            <li>{location.location.state.name != null ? location.location.state.name : ''}</li>
+            <li>{username}</li>
             <li><CardGiftcardIcon></CardGiftcardIcon></li>
             <li><NotificationsIcon></NotificationsIcon></li>
             <li onClick={() => setToggle(!onToggle)}>

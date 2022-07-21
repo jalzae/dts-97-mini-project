@@ -3,11 +3,19 @@
 import movies from '../../data/movies.js'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
+import { useNavigate } from "react-router-dom";
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 const Slider = () => {
+  let navigate = useNavigate();
   SwiperCore.use([Navigation]);
+
+  const goDetail = (x) => {
+
+    navigate(`/detail/${x}`, { state: {} }, { replace: true });
+
+  }
 
   return (
     <div className='m-4'>
@@ -20,11 +28,11 @@ const Slider = () => {
           loop={true}
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}
-          onReachEnd={() => console.log("react end")}
+          onReachEnd={() => { }}
         >
           {
             movies.results.map((x) => <SwiperSlide>
-              <div className='preview-slide col-lg-12 rounded-0 m-4 d-flex'>
+              <div onClick={() => goDetail(x.id)} className='preview-slide col-lg-12 rounded-0 m-4 d-flex'>
                 <div className='slider-left col-4'>
                   <p className='title'>{x.title}</p>
                   <p className='desc'>{x.overview}</p>

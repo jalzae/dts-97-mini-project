@@ -234,6 +234,19 @@ h3 {
   cursor: pointer;
 }
 
+.content-detail {
+  position: absolute;
+  top: 350px;
+  left: 100px;
+}
+
+.buttonrow {
+  margin-left: 0px;
+}
+.play-button {
+  
+}
+
 @media only screen and (max-width:900px) {
   .left-main {
     display: none;

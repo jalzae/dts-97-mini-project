@@ -17,6 +17,10 @@ const Login = (props) => {
       navigate("/profile", { replace: true });
     }
   }
+
+  const goHome = () => {
+    navigate("/home", { state: {} }, { replace: true });
+  }
   return (
     <div className='m-5 p-5'>
       <div className='form-group'>
@@ -25,6 +29,9 @@ const Login = (props) => {
 
       <div className='form-group'>
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className='form-control rounded-0 bg-dark text-light' placeholder='PASSWORD' />
+      </div>
+      <div className='form-group'>
+        <p onClick={() => goHome()} className='text-light'>Instant Access Here</p>
       </div>
       <div className='form-group'>
         <button onClick={() => login(username, password)} className='btn btn-danger form-control rounded-0'>LOGIN</button>
