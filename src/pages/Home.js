@@ -1,6 +1,8 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/css/style.css'
+import { useLocation } from 'react-router-dom';
+
 import Header from '../components/home/header'
 import Footer from '../components/home/Footer'
 import Slider from '../components/home/Slide'
@@ -11,10 +13,11 @@ import Ongoing from '../components/home/Ongoing'
 import Original from '../components/home/Original'
 import Popular from '../components/home/Popular'
 import WatchAgain from '../components/home/WatchAgain'
-function Profile() {
+function Home() {
+  const location = useLocation();
   return (
     <div className="Home">
-      <Header></Header>
+      <Header location={location}></Header>
       <Slider></Slider>
       <div className='content container-fluid'>
         <Popular></Popular>
@@ -30,4 +33,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default Home;

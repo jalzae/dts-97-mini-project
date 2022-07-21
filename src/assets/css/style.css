@@ -217,15 +217,19 @@ h3 {
 .swiper-button-next {
   color: white !important;
 }
+
 .preview-item {
   cursor: pointer;
 }
+
 .preview-slide {
   cursor: pointer;
 }
+
 .search-text input {
   max-height: 50px !important;
 }
+
 .search {
   cursor: pointer;
 }
@@ -237,5 +241,9 @@ h3 {
 
   .nav-left ul li {
     display: none;
+  }
+
+  .profile {
+    display: block !important;
   }
 }
